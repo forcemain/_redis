@@ -4,7 +4,7 @@ init_conf:
 instances:
   - init:
       db: 0
-      port: 6378
+      port: 5123
       password:
       host: 127.0.0.1
       max_connections: 5
@@ -12,7 +12,7 @@ instances:
         port: 5123
   - init:
       db: 0
-      port: 6379
+      port: 5124
       password:
       host: 127.0.0.1
       max_connections: 5
