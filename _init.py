@@ -2,18 +2,19 @@
 
 
 import os
-import json
 import yaml
 
 
 from redis import StrictRedis
 from functools import partial
 from agent.util.enhance import Switch
+from agent.metrics.baseloader import BaseLoader
+from agent.metrics.basemetric import BaseMetric
 from agent.metrics.metric_data import MetricData
 from agent.metrics.basecollect import BaseCollector
 
 
-class Redis(object):
+class Redis(BaseMetric):
     def __init__(self, redis_aof_last_rewrite_time=None, redis_aof_rewrite=None, redis_clients_biggest_input_buf=None,
                  redis_clients_blocked=None, redis_clients_longest_output_list=None, redis_cpu_sys=None,
                  redis_cpu_sys_children=None, redis_cpu_user=None, redis_cpu_user_children=None,
@@ -282,20 +283,12 @@ class Redis(object):
 
         return data
 
-    def to_json(self, indent=4):
-        dict_data = self.to_dict()
-        json_data = json.dumps(dict_data, indent=indent)
-
-        return json_data
-
-    def __str__(self):
-        desc = '<{0}: {1}{2}>'.format(__name__, os.linesep, self.to_json(indent=4))
-
-        return desc
+    def is_valid(self):
+        return True
 
 
-class Loader(object):
-    def __init__(self, conf=os.path.join(os.path.dirname(__file__), '_redis.yaml')):
+class Loader(BaseLoader):
+    def __init__(self, conf=os.path.join(os.path.dirname(__file__), '_init.yaml')):
         with open(conf, 'r+b') as fd:
             self._conf = yaml.load(fd)
 
@@ -318,7 +311,8 @@ class Loader(object):
 
 
 class Collector(BaseCollector):
-    loader = Loader()
+    enable = False
+    loader = Loader() if enable is True else None
 
     def get_combinetag(self, tags):
         if not tags:
