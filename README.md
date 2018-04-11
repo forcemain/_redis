@@ -2,223 +2,383 @@
 <agent.metrics.user._redis._init: 
 {
     "redis_clients_biggest_input_buf": {
-        "name": "redis.clients.biggest_input_buf/port=5123", 
-        "value": 47169
+        "name": "redis.clients.biggest_input_buf",
+        "value": 47169,
+        "tags": {
+            "port": 5123
+        }
+        
     }, 
     "redis_rdb_changes_since_last": {
-        "name": "redis.rdb.changes_since_last/port=5123", 
-        "value": 0
+        "name": "redis.rdb.changes_since_last", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_rdb_bgsave": {
-        "name": "redis.rdb.bgsave/port=5123", 
+        "name": "redis.rdb.bgsave", 
         "value": 0
     }, 
     "redis_replication_master_repl_offs": {
-        "name": "redis.replication.master_repl_offs/port=5123", 
-        "value": 0
+        "name": "redis.replication.master_repl_offs", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_aof_rewrite": {
-        "name": "redis.aof.rewrite/port=5123", 
-        "value": 0
+        "name": "redis.aof.rewrite", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_net_commands": {
-        "name": "redis.net.commands/port=5123", 
-        "value": 529
+        "name": "redis.net.commands", 
+        "value": 529,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_stats_keyspace_hits": {
-        "name": "redis.stats.keyspace_hits/port=5123", 
-        "value": 0
+        "name": "redis.stats.keyspace_hits", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_clients_blocked": {
-        "name": "redis.clients.blocked/port=5123", 
-        "value": 0
+        "name": "redis.clients.blocked", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_net_clients": {
-        "name": "redis.net.clients/port=5123", 
-        "value": 7
+        "name": "redis.net.clients", 
+        "value": 7,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_stats_keyspace_misses": {
-        "name": "redis.stats.keyspace_misses/port=5123", 
-        "value": null
+        "name": "redis.stats.keyspace_misses", 
+        "value": null,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_perf_latest_fork_usec": {
-        "name": "redis.perf.latest_fork_usec/port=5123", 
-        "value": 0
+        "name": "redis.perf.latest_fork_usec", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_cpu_sys": {
-        "name": "redis.cpu.sys/port=5123", 
-        "value": 223.07
+        "name": "redis.cpu.sys", 
+        "value": 223.07,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_clients_longest_output_list": {
-        "name": "redis.clients.longest_output_list/port=5123", 
-        "value": 0
+        "name": "redis.clients.longest_output_list", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_mem_rss": {
-        "name": "redis.mem.rss/port=5123", 
-        "value": 13324288
+        "name": "redis.mem.rss", 
+        "value": 13324288,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_mem_used": {
-        "name": "redis.mem.used/port=5123", 
-        "value": 5689416
+        "name": "redis.mem.used", 
+        "value": 5689416,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_cpu_user_children": {
-        "name": "redis.cpu.user_children/port=5123", 
-        "value": 0.0
+        "name": "redis.cpu.user_children", 
+        "value": 0.0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_pubsub_channels": {
-        "name": "redis.pubsub.channels/port=5123", 
-        "value": 0
+        "name": "redis.pubsub.channels", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_mem_lua": {
-        "name": "redis.mem.lua/port=5123", 
-        "value": 33792
+        "name": "redis.mem.lua", 
+        "value": 33792,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_aof_last_rewrite_time": {
-        "name": "redis.aof.last_rewrite_time/port=5123", 
-        "value": -1
+        "name": "redis.aof.last_rewrite_time", 
+        "value": -1,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_mem_fragmentation_ratio": {
-        "name": "redis.mem.fragmentation_ratio/port=5123", 
-        "value": 2.34
+        "name": "redis.mem.fragmentation_ratio", 
+        "value": 2.34,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_net_slaves": {
-        "name": "redis.net.slaves/port=5123", 
-        "value": 0
+        "name": "redis.net.slaves", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_keys_expired": {
-        "name": "redis.keys.expired/port=5123", 
-        "value": 0
+        "name": "redis.keys.expired", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_rdb_last_bgsave_time": {
-        "name": "redis.rdb.last_bgsave_time/port=5123", 
-        "value": -1
+        "name": "redis.rdb.last_bgsave_time", 
+        "value": -1,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_cpu_user": {
-        "name": "redis.cpu.user/port=5123", 
-        "value": 172.17
+        "name": "redis.cpu.user", 
+        "value": 172.17,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_net_rejected": {
-        "name": "redis.net.rejected/port=5123", 
-        "value": 0
+        "name": "redis.net.rejected", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_cpu_sys_children": {
-        "name": "redis.cpu.sys_children/port=5123", 
-        "value": 0.0
+        "name": "redis.cpu.sys_children", 
+        "value": 0.0,
+        "tags": {
+            "port": 5123
+        }
     }, 
     "redis_keys_evicted": {
-        "name": "redis.keys.evicted/port=5123", 
-        "value": 0
+        "name": "redis.keys.evicted", 
+        "value": 0,
+        "tags": {
+            "port": 5123
+        }
     }
 }>
 <agent.metrics.user._redis._init: 
 {
     "redis_clients_biggest_input_buf": {
-        "name": "redis.clients.biggest_input_buf/port=5124", 
-        "value": 47165
+        "name": "redis.clients.biggest_input_buf", 
+        "value": 47165,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_rdb_changes_since_last": {
-        "name": "redis.rdb.changes_since_last/port=5124", 
-        "value": 0
+        "name": "redis.rdb.changes_since_last", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_rdb_bgsave": {
-        "name": "redis.rdb.bgsave/port=5124", 
-        "value": 0
+        "name": "redis.rdb.bgsave", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_replication_master_repl_offs": {
-        "name": "redis.replication.master_repl_offs/port=5124", 
-        "value": 0
+        "name": "redis.replication.master_repl_offs", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_aof_rewrite": {
-        "name": "redis.aof.rewrite/port=5124", 
-        "value": 0
+        "name": "redis.aof.rewrite", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_net_commands": {
-        "name": "redis.net.commands/port=5124", 
-        "value": 529
+        "name": "redis.net.commands", 
+        "value": 529,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_stats_keyspace_hits": {
-        "name": "redis.stats.keyspace_hits/port=5124", 
-        "value": 0
+        "name": "redis.stats.keyspace_hits", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_clients_blocked": {
-        "name": "redis.clients.blocked/port=5124", 
-        "value": 0
+        "name": "redis.clients.blocked", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_net_clients": {
-        "name": "redis.net.clients/port=5124", 
-        "value": 6
+        "name": "redis.net.clients", 
+        "value": 6,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_stats_keyspace_misses": {
-        "name": "redis.stats.keyspace_misses/port=5124", 
-        "value": null
+        "name": "redis.stats.keyspace_misses", 
+        "value": null,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_perf_latest_fork_usec": {
-        "name": "redis.perf.latest_fork_usec/port=5124", 
-        "value": 0
+        "name": "redis.perf.latest_fork_usec", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_cpu_sys": {
-        "name": "redis.cpu.sys/port=5124", 
-        "value": 223.05
+        "name": "redis.cpu.sys", 
+        "value": 223.05,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_clients_longest_output_list": {
-        "name": "redis.clients.longest_output_list/port=5124", 
-        "value": 0
+        "name": "redis.clients.longest_output_list", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_mem_rss": {
-        "name": "redis.mem.rss/port=5124", 
-        "value": 13258752
+        "name": "redis.mem.rss", 
+        "value": 13258752,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_mem_used": {
-        "name": "redis.mem.used/port=5124", 
-        "value": 5687576
+        "name": "redis.mem.used", 
+        "value": 5687576,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_cpu_user_children": {
-        "name": "redis.cpu.user_children/port=5124", 
-        "value": 0.0
+        "name": "redis.cpu.user_children", 
+        "value": 0.0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_pubsub_channels": {
-        "name": "redis.pubsub.channels/port=5124", 
-        "value": 0
+        "name": "redis.pubsub.channels", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_mem_lua": {
-        "name": "redis.mem.lua/port=5124", 
-        "value": 33792
+        "name": "redis.mem.lua", 
+        "value": 33792,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_aof_last_rewrite_time": {
-        "name": "redis.aof.last_rewrite_time/port=5124", 
-        "value": -1
+        "name": "redis.aof.last_rewrite_time", 
+        "value": -1,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_mem_fragmentation_ratio": {
-        "name": "redis.mem.fragmentation_ratio/port=5124", 
-        "value": 2.33
+        "name": "redis.mem.fragmentation_ratio", 
+        "value": 2.33,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_net_slaves": {
-        "name": "redis.net.slaves/port=5124", 
-        "value": 0
+        "name": "redis.net.slaves", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_keys_expired": {
-        "name": "redis.keys.expired/port=5124", 
-        "value": 0
+        "name": "redis.keys.expired", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_rdb_last_bgsave_time": {
-        "name": "redis.rdb.last_bgsave_time/port=5124", 
-        "value": -1
+        "name": "redis.rdb.last_bgsave_time", 
+        "value": -1,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_cpu_user": {
-        "name": "redis.cpu.user/port=5124", 
-        "value": 169.47
+        "name": "redis.cpu.user", 
+        "value": 169.47,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_net_rejected": {
-        "name": "redis.net.rejected/port=5124", 
-        "value": 0
+        "name": "redis.net.rejected", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_cpu_sys_children": {
-        "name": "redis.cpu.sys_children/port=5124", 
-        "value": 0.0
+        "name": "redis.cpu.sys_children", 
+        "value": 0.0,
+        "tags": {
+            "port": 5124
+        }
     }, 
     "redis_keys_evicted": {
-        "name": "redis.keys.evicted/port=5124", 
-        "value": 0
+        "name": "redis.keys.evicted", 
+        "value": 0,
+        "tags": {
+            "port": 5124
+        }
     }
 }>
 ```

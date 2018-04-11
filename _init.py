@@ -314,18 +314,6 @@ class Collector(BaseCollector):
     enable = False
     loader = Loader() if enable is True else None
 
-    def get_combinetag(self, tags):
-        if not tags:
-            return ''
-
-        combinetag_list = []
-        combinetag_suffix = '/'
-        for tag_k, tag_v in tags.iteritems():
-            combinetag_list.append('{0}={1}'.format(tag_k, tag_v))
-        combinetag_body = ','.join(combinetag_list)
-
-        return '{0}{1}'.format(combinetag_suffix, combinetag_body)
-
     def get_inst_infos(self, inst):
         inst_infos = {}
         sections = ['Clients', 'Memory', 'Persistence', 'Stats', 'Replication', 'CPU', 'Keyspace']
@@ -345,143 +333,142 @@ class Collector(BaseCollector):
         return tags_infos_list
 
     def get_metricdata(self, redis_info, tags, name):
-        combinetag = self.get_combinetag(tags)
         for case in Switch(name):
             if case('redis_aof_last_rewrite_time'):
-                name = 'redis.aof.last_rewrite_time{0}'.format(combinetag)
+                name = 'redis.aof.last_rewrite_time'
                 value = redis_info.get('aof_last_rewrite_time_sec')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_aof_rewrite'):
-                name = 'redis.aof.rewrite{0}'.format(combinetag)
+                name = 'redis.aof.rewrite'
                 value = redis_info.get('aof_rewrite_in_progress')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_clients_biggest_input_buf'):
-                name = 'redis.clients.biggest_input_buf{0}'.format(combinetag)
+                name = 'redis.clients.biggest_input_buf'
                 value = redis_info.get('client_biggest_input_buf')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_clients_blocked'):
-                name = 'redis.clients.blocked{0}'.format(combinetag)
+                name = 'redis.clients.blocked'
                 value = redis_info.get('blocked_clients')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_clients_longest_output_list'):
-                name = 'redis.clients.longest_output_list{0}'.format(combinetag)
+                name = 'redis.clients.longest_output_list'
                 value = redis_info.get('client_longest_output_list')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_cpu_sys'):
-                name = 'redis.cpu.sys{0}'.format(combinetag)
+                name = 'redis.cpu.sys'
                 value = redis_info.get('used_cpu_sys')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_cpu_sys_children'):
-                name = 'redis.cpu.sys_children{0}'.format(combinetag)
+                name = 'redis.cpu.sys_children'
                 value = redis_info.get('used_cpu_sys_children')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_cpu_user'):
-                name = 'redis.cpu.user{0}'.format(combinetag)
+                name = 'redis.cpu.user'
                 value = redis_info.get('used_cpu_user')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_cpu_user_children'):
-                name = 'redis.cpu.user_children{0}'.format(combinetag)
+                name = 'redis.cpu.user_children'
                 value = redis_info.get('used_cpu_user_children')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_keys_evicted'):
-                name = 'redis.keys.evicted{0}'.format(combinetag)
+                name = 'redis.keys.evicted{0}'
                 value = redis_info.get('evicted_keys')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_keys_expired'):
-                name = 'redis.keys.expired{0}'.format(combinetag)
+                name = 'redis.keys.expired'
                 value = redis_info.get('expired_keys')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_mem_fragmentation_ratio'):
-                name = 'redis.mem.fragmentation_ratio{0}'.format(combinetag)
+                name = 'redis.mem.fragmentation_ratio'
                 value = redis_info.get('mem_fragmentation_ratio')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_mem_lua'):
-                name = 'redis.mem.lua{0}'.format(combinetag)
+                name = 'redis.mem.lua'
                 value = redis_info.get('used_memory_lua')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_mem_rss'):
-                name = 'redis.mem.rss{0}'.format(combinetag)
+                name = 'redis.mem.rss'
                 value = redis_info.get('used_memory_rss')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_mem_used'):
-                name = 'redis.mem.used{0}'.format(combinetag)
+                name = 'redis.mem.used'
                 value = redis_info.get('used_memory')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_net_clients'):
-                name = 'redis.net.clients{0}'.format(combinetag)
+                name = 'redis.net.clients'
                 value = redis_info.get('connected_clients')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_net_commands'):
-                name = 'redis.net.commands{0}'.format(combinetag)
+                name = 'redis.net.commands'
                 value = redis_info.get('total_commands_processed')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_net_rejected'):
-                name = 'redis.net.rejected{0}'.format(combinetag)
+                name = 'redis.net.rejected'
                 value = redis_info.get('rejected_connections')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_net_slaves'):
-                name = 'redis.net.slaves{0}'.format(combinetag)
+                name = 'redis.net.slaves'
                 value = redis_info.get('connected_slaves')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_perf_latest_fork_usec'):
-                name = 'redis.perf.latest_fork_usec{0}'.format(combinetag)
+                name = 'redis.perf.latest_fork_usec'
                 value = redis_info.get('latest_fork_usec')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_pubsub_channels'):
-                name = 'redis.pubsub.channels{0}'.format(combinetag)
+                name = 'redis.pubsub.channels'
                 value = redis_info.get('pubsub_channels')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_rdb_bgsave'):
-                name = 'redis.rdb.bgsave{0}'.format(combinetag)
+                name = 'redis.rdb.bgsave'
                 value = redis_info.get('rdb_bgsave_in_progress')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_rdb_changes_since_last'):
-                name = 'redis.rdb.changes_since_last{0}'.format(combinetag)
+                name = 'redis.rdb.changes_since_last'
                 value = redis_info.get('rdb_changes_since_last_save')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_rdb_last_bgsave_time'):
-                name = 'redis.rdb.last_bgsave_time{0}'.format(combinetag)
+                name = 'redis.rdb.last_bgsave_time'
                 value = redis_info.get('rdb_last_bgsave_time_sec')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_replication_master_repl_offs'):
-                name = 'redis.replication.master_repl_offs{0}'.format(combinetag)
+                name = 'redis.replication.master_repl_offs'
                 value = redis_info.get('master_repl_offset')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_stats_keyspace_hits'):
-                name = 'redis.stats.keyspace_hits{0}'.format(combinetag)
+                name = 'redis.stats.keyspace_hits'
                 value = redis_info.get('keyspace_hits')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case('redis_stats_keyspace_misses'):
-                name = 'redis.stats.keyspace_misses{0}'.format(combinetag)
+                name = 'redis.stats.keyspace_misses'
                 value = redis_info.get('redis_stats_keyspace_misses')
 
-                return MetricData(name, value)
+                return MetricData(name, tags, value)
             if case():
                 return None
 
